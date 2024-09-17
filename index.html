@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/gr.ico">
+</head>
+<body>
+    <div class="header">
+        <span class="header-topic">css / layout / grid</span>
+    </div>
+    <div class="wrapper">
+        <span class="section">Grid Container Properties</span>
+        <div class="properties">
+            <div class="display">
+                <span class="title">display</span>
+                <span class="description">Определяет элемент как grid-контейнер, а дочерние элементы этого контейнера начинают подчиняться правилам grid-раскладки.</span>
+                <div class="example">
+                    <div class="display-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>display: grid;</code></span>
+                </div>
+            </div>
+            <div class="grid-template-rows">
+                <span class="title">grid-template-rows</span>
+                <span class="description">Определяет размеры и количество строк в grid-сетке.</span>
+                <div class="example">
+                    <div class="grid-template-rows-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                        <div class="grid-element">5</div>
+                    </div>
+                    <span class="code"><code>grid-template-rows: auto 20% 1fr 2fr;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-template-rows-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>grid-template-rows: repeat(4, auto);</code></span>
+                </div>
+            </div>
+            <div class="grid-template-columns">
+                <span class="title">grid-template-columns</span>
+                <span class="description">Определяет размеры и количество столбцов в grid-сетке.</span>
+                <div class="example">
+                    <div class="grid-template-columns-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>grid-template-columns: 30px 20px 20% 40%;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-template-columns-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2 2</div>
+                        <div class="grid-element">3 3</div>
+                    </div>
+                    <span class="code"><code>grid-template-columns: auto min-content max-content;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-template-columns-3">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>grid-template-columns: repeat(4, minmax(auto, 60px));</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-template-columns-4">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                    </div>
+                    <span class="code"><code>grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-template-columns-5">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                    </div>
+                    <span class="code"><code>grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));</code></span>
+                </div>
+            </div>
+            <div class="grid-template-areas">
+                <span class="title">grid-template-areas</span>
+                <span class="description">Определяет именованные области внутри grid-сетки.</span>
+                <div class="example">
+                    <div class="grid-template-areas-1">
+                        <div class="grid-element header">header</div>
+                        <div class="grid-element footer">footer</div>
+                        <div class="grid-element aside">aside</div>
+                        <div class="grid-element content">content</div>
+                    </div>
+                    <span class="code"><code>grid-template-areas:<br>"header header"<br>"aside content"<br>"footer footer";</code></span>
+                </div>
+            </div>
+            <div class="grid-template">
+                <span class="title">grid-template</span>
+                <span class="description">Шорткат, который определяет 3 свойства одновременно: grid-template-rows, grid-template-columns, grid-template-areas (необязательно).</span>
+                <div class="example">
+                    <div class="grid-template-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                        <div class="grid-element">5</div>
+                        <div class="grid-element">6</div>
+                    </div>
+                    <span class="code"><code>grid-template: 1fr 3fr 2fr / 1fr 2fr;</code></span>
+                </div>
+            </div>
+            <div class="grid-auto-rows">
+                <span class="title">grid-auto-rows</span>
+                <span class="description">Определяет размеры автоматически добавляемых строк.</span>
+                <div class="example">
+                    <div class="grid-auto-rows-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element auto-element">auto</div>
+                        <div class="grid-element auto-element">auto</div>
+                    </div>
+                    <span class="code"><code>grid-template-rows: repeat(2, 40px);<br>grid-auto-rows: auto;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-auto-rows-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element auto-element">auto</div>
+                        <div class="grid-element auto-element">auto</div>
+                        <div class="grid-element auto-element">auto</div>
+                        <div class="grid-element auto-element">auto</div>
+                    </div>
+                    <span class="code"><code>grid-template-rows: repeat(2, 40px);<br>grid-auto-rows: auto 70px;</code></span>
+                </div>
+            </div>
+            <div class="grid-auto-columns">
+                <span class="title">grid-auto-columns</span>
+                <span class="description">Определяет размеры автоматически добавляемых столбцов.</span>
+                <div class="example">
+                    <div class="grid-auto-columns-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element auto-element">auto</div>
+                        <div class="grid-element auto-element">auto</div>
+                    </div>
+                    <span class="code"><code>grid-auto-columns: auto;<br>grid-auto-flow: column;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-auto-columns-2">
+                        <div class="grid-element auto-element">auto</div>
+                        <div class="grid-element auto-element">auto</div>
+                        <div class="grid-element auto-element">auto</div>
+                        <div class="grid-element auto-element">auto</div>
+                    </div>
+                    <span class="code"><code>grid-auto-columns: 12px min-content;<br>grid-auto-flow: column;</code></span>
+                </div>
+            </div>
+            <div class="grid-auto-flow">
+                <span class="title">grid-auto-flow</span>
+                <span class="description">Определяет как автоматически размещать элементы, если они не имеют явного размещения.</span>
+                <div class="example">
+                    <div class="grid-auto-flow-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>grid-template: repeat(2, 1fr) / repeat(2, 1fr);<br>grid-auto-flow: row;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-auto-flow-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>grid-template: repeat(2, 1fr) / repeat(2, 1fr);<br>grid-auto-flow: column;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-auto-flow-3">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element span-element">2</div>
+                        <div class="grid-element">3</div>
+                    </div>
+                    <span class="code"><code>grid-template: repeat(2, 1fr) / repeat(2, 1fr);<br>grid-auto-flow: row dense;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-auto-flow-4">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element span-element">2</div>
+                        <div class="grid-element">3</div>
+                    </div>
+                    <span class="code"><code>grid-template: repeat(2, 1fr) / repeat(2, 1fr);<br>grid-auto-flow: column dense;</code></span>
+                </div>
+            </div>
+            <div class="row-gap">
+                <span class="title">row-gap</span>
+                <span class="description">Определяет промежуток между строками.</span>
+                <div class="example">
+                    <div class="row-gap-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                        <div class="grid-element">5</div>
+                        <div class="grid-element">6</div>
+                    </div>
+                    <span class="code"><code>row-gap: 4px;</code></span>
+                </div>
+            </div>
+            <div class="column-gap">
+                <span class="title">column-gap</span>
+                <span class="description">Определяет промежуток между столбцами.</span>
+                <div class="example">
+                    <div class="column-gap-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                        <div class="grid-element">5</div>
+                        <div class="grid-element">6</div>
+                    </div>
+                    <span class="code"><code>column-gap: 4px;</code></span>
+                </div>
+            </div>
+            <div class="gap">
+                <span class="title">gap</span>
+                <span class="description">Шорткат, который определяет 2 свойства одновременно: row-gap и column-gap.</span>
+                <div class="example">
+                    <div class="gap-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                        <div class="grid-element">5</div>
+                        <div class="grid-element">6</div>
+                    </div>
+                    <span class="code"><code>gap: 4px;</code></span>
+                </div>
+            </div>
+            <div class="justify-content">
+                <span class="title">justify-content</span>
+                <span class="description">Определяет выравнивание элементов вдоль горизонтальной оси в пределах grid-контейнера.</span>
+                <div class="example">
+                    <div class="justify-content-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-content: start;</code></span>
+                </div>
+                <div class="example">
+                    <div class="justify-content-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-content: end;</code></span>
+                </div>
+                <div class="example">
+                    <div class="justify-content-3">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-content: center;</code></span>
+                </div>
+                <div class="example">
+                    <div class="justify-content-4">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-content: stretch;</code></span>
+                </div>
+                <div class="example">
+                    <div class="justify-content-5">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-content: space-between;</code></span>
+                </div>
+                <div class="example">
+                    <div class="justify-content-6">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-content: space-around;</code></span>
+                </div>
+                <div class="example">
+                    <div class="justify-content-7">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-content: space-evenly;</code></span>
+                </div>
+            </div>
+            <div class="align-content">
+                <span class="title">align-content</span>
+                <span class="description">Определяет выравнивание элементов вдоль вертикальной оси в пределах grid-контейнера.</span>
+                <div class="example">
+                    <div class="align-content-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-content: start;</code></span>
+                </div>
+                <div class="example">
+                    <div class="align-content-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-content: end;</code></span>
+                </div>
+                <div class="example">
+                    <div class="align-content-3">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-content: center;</code></span>
+                </div>
+                <div class="example">
+                    <div class="align-content-4">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-content: stretch;</code></span>
+                </div>
+                <div class="example">
+                    <div class="align-content-5">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-content: space-between;</code></span>
+                </div>
+                <div class="example">
+                    <div class="align-content-6">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-content: space-around;</code></span>
+                </div>
+                <div class="example">
+                    <div class="align-content-7">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-content: space-evenly;</code></span>
+                </div>
+            </div>
+            <div class="place-content">
+                <span class="title">place-content</span>
+                <span class="description">Шорткат, который определяет 2 свойства одновременно: justify-content и align-content.</span>
+                <div class="example">
+                    <div class="place-content-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-content: start;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-content-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-content: end;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-content-3">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-content: center;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-content-4">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-content: stretch;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-content-5">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-content: space-between;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-content-6">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-content: space-around;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-content-7">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-content: space-evenly;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-content-8">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-content: space-between center;</code></span>
+                </div>
+            </div>
+            <div class="justify-items">
+                <span class="title">justify-items</span>
+                <span class="description">Определяет выравнивание элементов вдоль горизонтальной оси в пределах grid-ячейки.</span>
+                <div class="example">
+                    <div class="justify-items-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-items: start;</code></span>
+                </div>
+                <div class="example">
+                    <div class="justify-items-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-items: end;</code></span>
+                </div>
+                <div class="example">
+                    <div class="justify-items-3">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-items: center;</code></span>
+                </div>
+                <div class="example">
+                    <div class="justify-items-4">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>justify-items: stretch;</code></span>
+                </div>
+            </div>
+            <div class="align-items">
+                <span class="title">align-items</span>
+                <span class="description">Определяет выравнивание элементов вдоль вертикальной оси в пределах grid-ячейки.</span>
+                <div class="example">
+                    <div class="align-items-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-items: start;</code></span>
+                </div>
+                <div class="example">
+                    <div class="align-items-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-items: end;</code></span>
+                </div>
+                <div class="example">
+                    <div class="align-items-3">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-items: center;</code></span>
+                </div>
+                <div class="example">
+                    <div class="align-items-4">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>align-items: stretch;</code></span>
+                </div>
+            </div>
+            <div class="place-items">
+                <span class="title">place-items</span>
+                <span class="description">Шорткат, который определяет 2 свойства одновременно: justify-items и align-items.</span>
+                <div class="example">
+                    <div class="place-items-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-items: start;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-items-2">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-items: end;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-items-3">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-items: center;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-items-4">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-items: stretch;</code></span>
+                </div>
+                <div class="example">
+                    <div class="place-items-5">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                    </div>
+                    <span class="code"><code>place-items: center end;</code></span>
+                </div>
+            </div>
+            <div class="grid">
+                <span class="title">grid</span>
+                <span class="description">Шорткат, который определяет 6 свойств одновременно: grid-template-rows, grid-template-columns, grid-temlate-areas, grid-auto-rows, grid-auto-columns, grid-auto-flow.</span>
+                <div class="example">
+                    <div class="grid-1">
+                        <div class="grid-element">1</div>
+                        <div class="grid-element">2</div>
+                        <div class="grid-element">3</div>
+                        <div class="grid-element">4</div>
+                        <div class="grid-element">5</div>
+                        <div class="grid-element">6</div>
+                    </div>
+                    <span class=code><code>grid: repeat(3, auto) / auto-flow auto 1fr;</code></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <span class="section">Grid Element Properties</span>
+        <div class="properties">
+            <div class="order">
+                <span class="title">order</span>
+                <span class="description">Определяет порядок отображения grid-элемента.</span>
+                <div class="example">
+                    <div class="order-1">
+                        <div class="grid-element edit-element three">3</div>
+                        <div class="grid-element edit-element minus-one">-1</div>
+                        <div class="grid-element edit-element two">2</div>
+                        <div class="grid-element edit-element zero">0</div>
+                        <div class="grid-element edit-element one">1</div>
+                        <div class="grid-element edit-element minus-two">-2</div>
+                    </div>
+                    <span class="code"><code>order: -2;<br>order: -1;<br>order: 0;<br>order: 1;<br>order: 2;<br>order: 3;<br></code></span>
+                </div>
+            </div>
+            <div class="grid-row-start">
+                <span class="title">grid-row-start</span>
+                <span class="description">Определяет стартовую горизонтальную grid-линию для размещения grid-элемента.</span>
+                <div class="example">
+                    <div class="grid-row-start-1">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-row-start: 3;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-row-start-2">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-row-start: line-three;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-row-start-3">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-row-start: span 2;</code></span>
+                </div>
+            </div>
+            <div class="grid-row-end">
+                <span class="title">grid-row-end</span>
+                <span class="description">Определяет конечную горизонтальную grid-линию для размещения grid-элемента.</span>
+                <div class="example">
+                    <div class="grid-row-end-1">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-row-end: 3;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-row-end-2">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-row-end: line-three;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-row-end-3">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-row-end: span 2;</code></span>
+                </div>
+            </div>
+            <div class="grid-row">
+                <span class="title">grid-row</span>
+                <span class="description">Шорткат, который определяет 2 свойства одновременно: grid-row-start и grid-row-end.</span>
+                <div class="example">
+                    <div class="grid-row-1">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-row: 1 / 4;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-row-2">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-row: span 3;</code></span>
+                </div>
+            </div>
+            <div class="grid-column-start">
+                <span class="title">grid-column-start</span>
+                <span class="description">Определяет начальную вертикальную grid-линию для размещения grid-элемента.</span>
+                <div class="example">
+                    <div class="grid-column-start-1">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-column-start: -2;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-column-start-2">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-column-start: line-three;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-column-start-3">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-column-start: span 2;</code></span>
+                </div>
+            </div>
+            <div class="grid-column-end">
+                <span class="title">grid-column-end</span>
+                <span class="description">Определяет конечную вертикальную grid-линию для размещения grid-элемента.</span>
+                <div class="example">
+                    <div class="grid-column-end-1">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-column-end: 3;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-column-end-2">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-column-end: line-three;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-column-end-3">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-column-end: span 2;</code></span>
+                </div>
+            </div>
+            <div class="grid-column">
+                <span class="title">grid-column</span>
+                <span class="description">Шорткат, который определяет 2 свойства одновременно: grid-column-start и grid-column-end.</span>
+                <div class="example">
+                    <div class="grid-column-1">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-column: 2 / -1;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-column-2">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-column: span 3;</code></span>
+                </div>
+            </div>
+            <div class="grid-area">
+                <span class="title">grid-area</span>
+                <span class="description">Определяет к какой именованной области grid-элемент должен принадлежать и определяет 4 свойства одновременно: grid-row-start, grid-row-end, grid-column-start, grid-column-end.</span>
+                <div class="example">
+                    <div class="grid-area-1">
+                        <div class="grid-element edit-element">content</div>
+                    </div>
+                    <span class="code"><code>grid-area: content;</code></span>
+                </div>
+                <div class="example">
+                    <div class="grid-area-2">
+                        <div class="grid-element edit-element"></div>
+                    </div>
+                    <span class="code"><code>grid-area: 2 / 2 / -1 / 4;</code></span>
+                </div>
+            </div>
+            <div class="justify-self">
+                <span class="title">justify-self</span>
+                <span class="description">Определяет выравнивание grid-элемента вдоль горизонтальной оси в пределах grid-ячейки.</span>
+                <div class="example">
+                    <div class="justify-self-1">
+                        <div class="grid-element"></div>
+                        <div class="grid-element"></div>
+                        <div class="grid-element edit-element three"></div>
+                        <div class="grid-element"></div>
+                        <div class="grid-element"></div>
+                        <div class="grid-element"></div>
+                    </div>
+                    <span class="code"><code>justify-self: stretch;</code></span>
+                </div>
+            </div>
+            <div class="align-self">
+                <span class="title">align-self</span>
+                <span class="description">Определяет выравнивание grid-элемента вдоль вертикальной оси в пределах grid-ячейки.</span>
+                <div class="example">
+                    <div class="align-self-1">
+                        <div class="grid-element"></div>
+                        <div class="grid-element"></div>
+                        <div class="grid-element edit-element three"></div>
+                        <div class="grid-element"></div>
+                        <div class="grid-element"></div>
+                        <div class="grid-element"></div>
+                    </div>
+                    <span class="code"><code>align-self: end;</code></span>
+                </div>
+            </div>
+            <div class="place-self">
+                <span class="title">place-self</span>
+                <span class="description">Шорткат, который определяет 2 свойства одновременно: justify-self и align-self.</span>
+                <div class="example">
+                    <div class="place-self-1">
+                        <div class="grid-element"></div>
+                        <div class="grid-element"></div>
+                        <div class="grid-element edit-element three"></div>
+                        <div class="grid-element"></div>
+                        <div class="grid-element"></div>
+                        <div class="grid-element"></div>
+                    </div>
+                    <span class="code"><code>place-self: stretch;</code></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="caption">
+            <span class="caption-title">Developed and<br>Designed by<br>Matthew Zdanevich</span>
+        </div>
+        <div class="contacts">
+            <span class="section-title">Contacts:</span>
+            <ul>
+                <li><a href="https://github.com/MatthewZdanevich">GitHub</a></li>
+            </ul>
+        </div>
+        <div class="credits">
+            <span class="section-title">Credits:</span>
+            <ul>
+                <li>CSS Grid Layout</li>
+                <li>September 2024</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
